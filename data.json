@@ -1,0 +1,172 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "nama": "Workshop Web Development",
+      "gambar": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Online via Zoom",
+      "tanggal": "15 Februari 2026",
+      "waktu": "09:00 - 17:00 WIB",
+      "pemateri": ["Ahmad Rizki"],
+      "tag": ["workshop", "web-development", "javascript"],
+      "kategori": "workshop",
+      "deskripsi": "Pelajari dasar-dasar web development dari HTML, CSS, hingga JavaScript dengan mentor berpengalaman. Cocok untuk pemula yang ingin memulai karir di bidang web development."
+    },
+    {
+      "id": 2,
+      "nama": "Networking Session",
+      "gambar": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Jakarta Convention Center",
+      "tanggal": "22 Februari 2026",
+      "waktu": "18:00 - 21:00 WIB",
+      "pemateri": [],
+      "tag": ["networking", "community"],
+      "kategori": "networking",
+      "deskripsi": "Bertemu dengan anggota komunitas lainnya dan perluas jaringan profesional Anda. Acara ini cocok untuk membangun koneksi dan berbagi pengalaman."
+    },
+    {
+      "id": 3,
+      "nama": "Hackathon Sahabat Belajar",
+      "gambar": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Online & Onsite",
+      "tanggal": "1 Maret 2026",
+      "waktu": "48 Jam Non-Stop",
+      "pemateri": ["Ahmad Rizki", "Siti Nurhaliza", "Budi Santoso"],
+      "tag": ["hackathon", "competition", "coding"],
+      "kategori": "hackathon",
+      "deskripsi": "Kompetisi coding 48 jam untuk mengasah skill dan berkolaborasi dengan developer lainnya. Hadiah total puluhan juta rupiah menanti!"
+    },
+    {
+      "id": 4,
+      "nama": "Workshop Mobile Development",
+      "gambar": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Online via Zoom",
+      "tanggal": "8 Maret 2026",
+      "waktu": "09:00 - 17:00 WIB",
+      "pemateri": ["Dewi Lestari"],
+      "tag": ["workshop", "mobile-development", "react-native", "flutter"],
+      "kategori": "workshop",
+      "deskripsi": "Pelajari pengembangan aplikasi mobile menggunakan React Native dan Flutter. Dari konsep hingga deployment ke Play Store dan App Store."
+    },
+    {
+      "id": 5,
+      "nama": "Workshop Data Science",
+      "gambar": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Online via Zoom",
+      "tanggal": "15 Maret 2026",
+      "waktu": "09:00 - 17:00 WIB",
+      "pemateri": ["Siti Nurhaliza"],
+      "tag": ["workshop", "data-science", "python", "machine-learning"],
+      "kategori": "workshop",
+      "deskripsi": "Pelajari data science dari dasar hingga advanced. Menggunakan Python, pandas, dan machine learning untuk analisis data yang powerful."
+    },
+    {
+      "id": 6,
+      "nama": "Tech Meetup Jakarta",
+      "gambar": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
+      "linkIg": "https://instagram.com/sahabatbelajar",
+      "lokasi": "Co-working Space Jakarta",
+      "tanggal": "22 Maret 2026",
+      "waktu": "18:00 - 21:00 WIB",
+      "pemateri": ["Maya Sari", "Andi Wijaya"],
+      "tag": ["networking", "meetup", "tech"],
+      "kategori": "networking",
+      "deskripsi": "Meetup bulanan untuk developer dan tech enthusiast. Diskusi tentang teknologi terbaru, sharing pengalaman, dan networking."
+    }
+  ],
+  "pemateri": [
+    {
+      "id": 1,
+      "nama": "Ahmad Rizki",
+      "gambar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "linkCv": "https://linkedin.com/in/ahmadrizki",
+      "lokasi": "Jakarta, Indonesia",
+      "tag": ["full-stack", "web-development", "javascript", "react", "nodejs"],
+      "posisi": "Full Stack Developer",
+      "deskripsi": "Expert dengan 10+ tahun pengalaman dalam web development dan cloud computing. Spesialisasi dalam React, Node.js, dan AWS.",
+      "workshop": 15
+    },
+    {
+      "id": 2,
+      "nama": "Siti Nurhaliza",
+      "gambar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      "linkCv": "https://linkedin.com/in/sitinurhaliza",
+      "lokasi": "Bandung, Indonesia",
+      "tag": ["data-science", "machine-learning", "python", "ai"],
+      "posisi": "Data Scientist",
+      "deskripsi": "Spesialis dalam machine learning dan data analytics dengan background PhD. Expert dalam Python, TensorFlow, dan Big Data.",
+      "workshop": 12
+    },
+    {
+      "id": 3,
+      "nama": "Budi Santoso",
+      "gambar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+      "linkCv": "https://linkedin.com/in/budisantoso",
+      "lokasi": "Surabaya, Indonesia",
+      "tag": ["ui-ux", "design", "figma", "design-systems"],
+      "posisi": "UI/UX Designer",
+      "deskripsi": "Award-winning designer dengan portfolio di berbagai perusahaan teknologi besar. Expert dalam Figma, Adobe XD, dan Design Systems.",
+      "workshop": 18
+    },
+    {
+      "id": 4,
+      "nama": "Dewi Lestari",
+      "gambar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "linkCv": "https://linkedin.com/in/dewilestari",
+      "lokasi": "Yogyakarta, Indonesia",
+      "tag": ["mobile-development", "react-native", "flutter", "ios", "android"],
+      "posisi": "Mobile Developer",
+      "deskripsi": "Senior mobile developer dengan expertise di React Native dan Flutter. Telah mengembangkan 50+ aplikasi mobile.",
+      "workshop": 20
+    },
+    {
+      "id": 5,
+      "nama": "Rizki Pratama",
+      "gambar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "linkCv": "https://linkedin.com/in/rizkipratama",
+      "lokasi": "Jakarta, Indonesia",
+      "tag": ["devops", "cloud", "docker", "kubernetes", "aws"],
+      "posisi": "DevOps Engineer",
+      "deskripsi": "Expert dalam CI/CD, Docker, Kubernetes, dan cloud infrastructure. Membantu banyak startup scale infrastruktur mereka.",
+      "workshop": 10
+    },
+    {
+      "id": 6,
+      "nama": "Andi Wijaya",
+      "gambar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "linkCv": "https://linkedin.com/in/andiwijaya",
+      "lokasi": "Jakarta, Indonesia",
+      "tag": ["backend", "microservices", "api", "go", "java"],
+      "posisi": "Backend Developer",
+      "deskripsi": "Spesialis dalam microservices architecture, RESTful API, dan database optimization. Expert dalam Go, Java, dan PostgreSQL.",
+      "workshop": 14
+    },
+    {
+      "id": 7,
+      "nama": "Maya Sari",
+      "gambar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
+      "linkCv": "https://linkedin.com/in/mayasari",
+      "lokasi": "Jakarta, Indonesia",
+      "tag": ["product-management", "agile", "strategy"],
+      "posisi": "Product Manager",
+      "deskripsi": "Product strategist dengan pengalaman membangun produk digital dari 0 hingga 1M+ users. Expert dalam Agile dan Lean methodologies.",
+      "workshop": 16
+    },
+    {
+      "id": 8,
+      "nama": "Fajar Nugroho",
+      "gambar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "linkCv": "https://linkedin.com/in/fajarnugroho",
+      "lokasi": "Jakarta, Indonesia",
+      "tag": ["cybersecurity", "ethical-hacking", "security"],
+      "posisi": "Cybersecurity Expert",
+      "deskripsi": "Ethical hacker dan security consultant dengan sertifikasi CISSP dan CEH. Membantu banyak perusahaan meningkatkan security mereka.",
+      "workshop": 8
+    }
+  ]
+}

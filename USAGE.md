@@ -1,0 +1,116 @@
+# Cara Menggunakan Data JSON untuk Event dan Pemateri
+
+## Struktur File
+
+- `data.json` - File data yang berisi array event dan pemateri
+- `data-loader.js` - Class untuk memuat dan mengakses data dari JSON
+- `render-functions.js` - Fungsi untuk render event dan pemateri ke HTML
+
+## Cara Menggunakan
+
+### 1. Include Scripts di HTML
+
+Tambahkan script berikut sebelum closing `</body>` tag:
+
+```html
+<script src="data-loader.js"></script>
+<script src="render-functions.js"></script>
+```
+
+### 2. Load dan Render Data Event
+
+```javascript
+// Inisialisasi DataLoader
+const dataLoader = new DataLoader();
+
+// Load data
+dataLoader.loadData().then(() => {
+    // Render semua event
+    const events = dataLoader.getEvents('all');
+    renderEventGrid(events, 'event-grid');
+    
+    // Atau filter berdasarkan kategori
+    const workshops = dataLoader.getEvents('workshop');
+    renderEventGrid(workshops, 'event-grid');
+});
+```
+
+### 3. Load dan Render Data Pemateri
+
+```javascript
+// Load data
+dataLoader.loadData().then(() => {
+    // Render semua pemateri
+    const pemateri = dataLoader.getPemateri();
+    renderPemateriGrid(pemateri, 'pemateri-grid');
+    
+    // Atau filter berdasarkan tag
+    const dataScientists = dataLoader.getPemateriByTag('data-science');
+    renderPemateriGrid(dataScientists, 'pemateri-grid');
+});
+```
+
+### 4. Filter Event dengan JavaScript
+
+```javascript
+// Setup filter buttons
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        const events = dataLoader.getEvents(filter);
+        renderEventGrid(events, 'event-grid');
+    });
+});
+```
+
+## Struktur Data Event
+
+```json
+{
+  "id": 1,
+  "nama": "Workshop Web Development",
+  "gambar": "url_gambar",
+  "linkIg": "https://instagram.com/...",
+  "lokasi": "Online via Zoom",
+  "tanggal": "15 Februari 2026",
+  "waktu": "09:00 - 17:00 WIB",
+  "pemateri": ["Ahmad Rizki"],
+  "tag": ["workshop", "web-development"],
+  "kategori": "workshop",
+  "deskripsi": "Deskripsi event..."
+}
+```
+
+## Struktur Data Pemateri
+
+```json
+{
+  "id": 1,
+  "nama": "Ahmad Rizki",
+  "gambar": "url_gambar",
+  "linkCv": "https://linkedin.com/...",
+  "lokasi": "Jakarta, Indonesia",
+  "tag": ["full-stack", "web-development"],
+  "posisi": "Full Stack Developer",
+  "deskripsi": "Deskripsi pemateri...",
+  "workshop": 15
+}
+```
+
+## Methods DataLoader
+
+- `loadData()` - Load data dari data.json
+- `getEvents(filter)` - Get events (filter: 'all', 'workshop', 'networking', 'hackathon')
+- `getEventById(id)` - Get event by ID
+- `getPemateri()` - Get all pemateri
+- `getPemateriById(id)` - Get pemateri by ID
+- `getPemateriByNama(nama)` - Get pemateri by name
+- `getPemateriByTag(tag)` - Get pemateri by tag
+- `getEventsByPemateri(namaPemateri)` - Get events by pemateri name
+
+## Keuntungan Menggunakan JSON
+
+1. **Mudah di-update** - Cukup edit file JSON tanpa mengubah kode
+2. **Separation of concerns** - Data terpisah dari logic
+3. **Siap untuk API** - Bisa diganti dengan API call di masa depan
+4. **Maintainable** - Lebih mudah di-maintain dan di-debug

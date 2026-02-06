@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Sahabat Belajar</title>
+    <meta name="description" content="Daftar lengkap event dan workshop komunitas Sahabat Belajar">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome untuk icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3" id="navbar-brand">
+                    <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html#hero" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
+                    <a href="event.html" class="nav-link text-blue-600 font-semibold transition-colors duration-300">Event</a>
+                    <a href="index.html#tentang" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
+                    <a href="pemateri.html" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Pemateri</a>
+                    <a href="index.html#kontak" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus:outline-none transition-colors duration-300" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-gray-700 text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+                <a href="index.html#hero" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
+                <a href="event.html" class="block py-2 nav-link text-blue-600 font-semibold transition-colors duration-300">Event</a>
+                <a href="index.html#tentang" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
+                <a href="pemateri.html" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Pemateri</a>
+                <a href="index.html#kontak" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Event & Workshop</h1>
+                <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+                    Dapatkan informasi tentang event-event menarik yang akan kami adakan
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event List Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold transition-all" data-filter="all">
+                    Semua Event
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="workshop">
+                    Workshop
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="networking">
+                    Networking
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="hackathon">
+                    Hackathon
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" id="event-grid">
+                <!-- Event 1 - Workshop -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="workshop">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-calendar-alt text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Workshop</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-blue-600 mr-2"></i>
+                            <span class="text-gray-600">15 Februari 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Workshop Web Development</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Pelajari dasar-dasar web development dari HTML, CSS, hingga JavaScript dengan mentor berpengalaman. Cocok untuk pemula yang ingin memulai karir di bidang web development.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span class="text-gray-600">Online via Zoom</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-blue-600 mr-2"></i>
+                            <span class="text-gray-600">09:00 - 17:00 WIB</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 2 - Networking -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="networking">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-users text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Networking</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-green-600 mr-2"></i>
+                            <span class="text-gray-600">22 Februari 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Networking Session</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Bertemu dengan anggota komunitas lainnya dan perluas jaringan profesional Anda. Acara ini cocok untuk membangun koneksi dan berbagi pengalaman.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>
+                            <span class="text-gray-600">Jakarta Convention Center</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-green-600 mr-2"></i>
+                            <span class="text-gray-600">18:00 - 21:00 WIB</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 3 - Hackathon -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="hackathon">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-laptop-code text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Hackathon</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-purple-600 mr-2"></i>
+                            <span class="text-gray-600">1 Maret 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hackathon Sahabat Belajar</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Kompetisi coding 48 jam untuk mengasah skill dan berkolaborasi dengan developer lainnya. Hadiah total puluhan juta rupiah menanti!
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-purple-600 mr-2"></i>
+                            <span class="text-gray-600">Online & Onsite</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-purple-600 mr-2"></i>
+                            <span class="text-gray-600">48 Jam Non-Stop</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 4 - Workshop -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="workshop">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-code text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Workshop</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-orange-600 mr-2"></i>
+                            <span class="text-gray-600">8 Maret 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Workshop Mobile Development</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Pelajari pengembangan aplikasi mobile menggunakan React Native dan Flutter. Dari konsep hingga deployment ke Play Store dan App Store.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-600 mr-2"></i>
+                            <span class="text-gray-600">Online via Zoom</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-orange-600 mr-2"></i>
+                            <span class="text-gray-600">09:00 - 17:00 WIB</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 5 - Workshop -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="workshop">
+                    <div class="bg-gradient-to-r from-teal-500 to-cyan-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-database text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Workshop</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-teal-600 mr-2"></i>
+                            <span class="text-gray-600">15 Maret 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Workshop Data Science</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Pelajari data science dari dasar hingga advanced. Menggunakan Python, pandas, dan machine learning untuk analisis data yang powerful.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-teal-600 mr-2"></i>
+                            <span class="text-gray-600">Online via Zoom</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-teal-600 mr-2"></i>
+                            <span class="text-gray-600">09:00 - 17:00 WIB</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 6 - Networking -->
+                <div class="event-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in flex flex-col h-full" data-category="networking">
+                    <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-48 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                        <i class="fas fa-handshake text-white text-6xl z-10"></i>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-white text-sm font-semibold">Networking</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-calendar text-indigo-600 mr-2"></i>
+                            <span class="text-gray-600">22 Maret 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tech Meetup Jakarta</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Meetup bulanan untuk developer dan tech enthusiast. Diskusi tentang teknologi terbaru, sharing pengalaman, dan networking.
+                        </p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
+                            <span class="text-gray-600">Co-working Space Jakarta</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-indigo-600 mr-2"></i>
+                            <span class="text-gray-600">18:00 - 21:00 WIB</span>
+                        </div>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all flex items-center justify-center gap-2 mt-auto">
+                            <i class="fab fa-instagram"></i>
+                            Ikuti di Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tertarik dengan Event Kami?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Ikuti Instagram kami untuk mendapatkan update event terbaru dan informasi pendaftaran
+            </p>
+            <a href="https://instagram.com/sahabatbelajar" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
+                <i class="fab fa-instagram mr-2"></i>
+                Follow Instagram Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sahabat Belajar</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Komunitas pembelajaran terdepan di Indonesia untuk masa depan yang lebih baik.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html#hero" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="event.html" class="hover:text-white transition-colors">Event</a></li>
+                        <li><a href="index.html#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="pemateri.html" class="hover:text-white transition-colors">Pemateri</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Program</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Workshop</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hackathon</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Networking</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mentoring</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Media Sosial</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/6281234567890" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://tiktok.com/@sahabatbelajar" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Sahabat Belajar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition-all opacity-0 invisible transform translate-y-4">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-blue-600', 'text-white');
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                const filter = button.getAttribute('data-filter');
+
+                eventCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

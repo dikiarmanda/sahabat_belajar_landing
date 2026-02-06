@@ -117,14 +117,23 @@ html {
 /* Hero Section Animations */
 #hero h1 {
     animation: fadeInUp 1s ease-out;
+    opacity: 1 !important; /* Override fade-in opacity untuk hero */
 }
 
 #hero p {
     animation: fadeInUp 1.2s ease-out;
+    opacity: 1 !important; /* Override fade-in opacity untuk hero */
 }
 
 #hero .flex.flex-col {
     animation: fadeInUp 1.4s ease-out;
+    opacity: 1 !important; /* Override fade-in opacity untuk hero */
+}
+
+/* Hero fade-in container langsung visible */
+#hero .fade-in {
+    opacity: 1 !important;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Card Hover Effects */

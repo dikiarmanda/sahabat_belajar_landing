@@ -1,18 +1,19 @@
-# Cara Menggunakan Data JSON untuk Event dan Pemateri
+# Cara Menggunakan Data untuk Event dan Pemateri
 
 ## Struktur File
 
-- `data.json` - File data yang berisi array event dan pemateri
-- `data-loader.js` - Class untuk memuat dan mengakses data dari JSON
+- `data.js` - File data yang berisi array event dan pemateri (menggunakan JavaScript untuk menghindari CORS issue)
+- `data-loader.js` - Class untuk memuat dan mengakses data dari data.js
 - `render-functions.js` - Fungsi untuk render event dan pemateri ke HTML
 
 ## Cara Menggunakan
 
 ### 1. Include Scripts di HTML
 
-Tambahkan script berikut sebelum closing `</body>` tag:
+Tambahkan script berikut sebelum closing `</body>` tag (pastikan urutan: data.js dulu, kemudian data-loader.js):
 
 ```html
+<script src="data.js"></script>
 <script src="data-loader.js"></script>
 <script src="render-functions.js"></script>
 ```
@@ -30,8 +31,8 @@ dataLoader.loadData().then(() => {
     renderEventGrid(events, 'event-grid');
     
     // Atau filter berdasarkan kategori
-    const workshops = dataLoader.getEvents('workshop');
-    renderEventGrid(workshops, 'event-grid');
+    const dongengEvents = dataLoader.getEvents('dongeng');
+    renderEventGrid(dongengEvents, 'event-grid');
 });
 ```
 
@@ -68,15 +69,15 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 ```json
 {
   "id": 1,
-  "nama": "Workshop Web Development",
+  "nama": "Dongeng Anak Ceria",
   "gambar": "url_gambar",
   "linkIg": "https://instagram.com/...",
   "lokasi": "Online via Zoom",
   "tanggal": "15 Februari 2026",
   "waktu": "09:00 - 17:00 WIB",
-  "pemateri": ["Ahmad Rizki"],
-  "tag": ["workshop", "web-development"],
-  "kategori": "workshop",
+  "pemateri": ["Kak Nadya"],
+  "tag": ["dongeng", "anak-anak"],
+  "kategori": "dongeng",
   "deskripsi": "Deskripsi event..."
 }
 ```
@@ -99,8 +100,8 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 ## Methods DataLoader
 
-- `loadData()` - Load data dari data.json
-- `getEvents(filter)` - Get events (filter: 'all', 'workshop', 'networking', 'hackathon')
+- `loadData()` - Load data dari data.js (menggunakan variabel appData)
+- `getEvents(filter)` - Get events (filter: 'all', 'dongeng', 'dakwah', 'talkshow')
 - `getEventById(id)` - Get event by ID
 - `getPemateri()` - Get all pemateri
 - `getPemateriById(id)` - Get pemateri by ID
@@ -108,9 +109,10 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 - `getPemateriByTag(tag)` - Get pemateri by tag
 - `getEventsByPemateri(namaPemateri)` - Get events by pemateri name
 
-## Keuntungan Menggunakan JSON
+## Keuntungan Menggunakan data.js
 
-1. **Mudah di-update** - Cukup edit file JSON tanpa mengubah kode
+1. **Mudah di-update** - Cukup edit file data.js tanpa mengubah kode
 2. **Separation of concerns** - Data terpisah dari logic
-3. **Siap untuk API** - Bisa diganti dengan API call di masa depan
-4. **Maintainable** - Lebih mudah di-maintain dan di-debug
+3. **Tidak ada CORS issue** - Bisa dibuka langsung di browser tanpa server
+4. **Siap untuk API** - Bisa diganti dengan API call di masa depan
+5. **Maintainable** - Lebih mudah di-maintain dan di-debug

@@ -6,12 +6,18 @@ class DataLoader {
 
     async loadData() {
         try {
-            const response = await fetch('data.json');
-            if (!response.ok) {
-                throw new Error('Failed to load data.json');
+            // Load from data.js (no CORS issue)
+            if (typeof appData !== 'undefined') {
+                this.data = appData;
+                return this.data;
             }
-            this.data = await response.json();
-            return this.data;
+            
+            // If appData is not available, return empty data structure
+            console.warn('appData tidak ditemukan. Pastikan data.js sudah di-load sebelum menggunakan DataLoader.');
+            return {
+                events: [],
+                pemateri: []
+            };
         } catch (error) {
             console.error('Error loading data:', error);
             // Fallback: return empty data structure

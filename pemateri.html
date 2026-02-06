@@ -1,393 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pemateri - Sahabat Belajar</title>
-    <meta name="description" content="Daftar lengkap pemateri dan mentor komunitas Sahabat Belajar">
-    
+    <meta name="description" content="Daftar lengkap pemateri dan mentor komunitas Sahabat Belajar" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo-brand.png" />
+    <link rel="apple-touch-icon" href="img/logo-brand.png" />
+    <link rel="shortcut icon" href="img/logo-brand.png" />
+
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Font Awesome untuk icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="bg-gray-50 loaded">
     <!-- Navigation Bar -->
     <nav class="fixed top-0 w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-3" id="navbar-brand">
-                    <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img">
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html#hero" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
-                    <a href="index.html#event" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Event</a>
-                    <a href="index.html#tentang" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
-                    <a href="pemateri.html" class="nav-link text-blue-600 font-semibold transition-colors duration-300">Pemateri</a>
-                    <a href="index.html#kontak" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden focus:outline-none transition-colors duration-300" id="mobile-menu-btn">
-                    <i class="fas fa-bars text-gray-700 text-2xl" id="mobile-menu-icon"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
-                <a href="index.html#hero" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
-                <a href="index.html#event" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Event</a>
-                <a href="index.html#tentang" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
-                <a href="pemateri.html" class="block py-2 nav-link text-blue-600 font-semibold transition-colors duration-300">Pemateri</a>
-                <a href="index.html#kontak" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
-            </div>
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="flex items-center space-x-3" id="navbar-brand">
+            <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img" />
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6">
+            <a href="index.html#hero" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
+            <a href="index.html#event" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Event</a>
+            <a href="index.html#tentang" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
+            <a href="pemateri.html" class="nav-link text-blue-600 font-semibold transition-colors duration-300">Pemateri</a>
+            <a href="index.html#kontak" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden focus:outline-none transition-colors duration-300" id="mobile-menu-btn">
+            <i class="fas fa-bars text-gray-700 text-2xl" id="mobile-menu-icon"></i>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+          <a href="index.html#hero" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Beranda</a>
+          <a href="index.html#event" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Event</a>
+          <a href="index.html#tentang" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Tentang Kami</a>
+          <a href="pemateri.html" class="block py-2 nav-link text-blue-600 font-semibold transition-colors duration-300">Pemateri</a>
+          <a href="index.html#kontak" class="block py-2 nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Kontak</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center fade-in">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Pemateri Kami</h1>
-                <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-                    Belajar dari para expert yang berpengalaman di bidangnya masing-masing
-                </p>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center fade-in">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Pemateri Kami</h1>
+          <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">Belajar dari para expert yang berpengalaman di bidangnya masing-masing</p>
         </div>
+      </div>
     </section>
 
     <!-- Pemateri List Section -->
     <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Pemateri 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-blue-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Ahmad Rizki</h3>
-                        <p class="text-blue-600 mb-3 font-semibold">Full Stack Developer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Expert dengan 10+ tahun pengalaman dalam web development dan cloud computing. Spesialisasi dalam React, Node.js, dan AWS.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 15+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-green-400 to-green-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-green-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Siti Nurhaliza</h3>
-                        <p class="text-green-600 mb-3 font-semibold">Data Scientist</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Spesialis dalam machine learning dan data analytics dengan background PhD. Expert dalam Python, TensorFlow, dan Big Data.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 12+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-purple-400 to-purple-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-purple-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Budi Santoso</h3>
-                        <p class="text-purple-600 mb-3 font-semibold">UI/UX Designer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Award-winning designer dengan portfolio di berbagai perusahaan teknologi besar. Expert dalam Figma, Adobe XD, dan Design Systems.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-dribbble text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-behance text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 18+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-orange-400 to-orange-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-orange-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Dewi Lestari</h3>
-                        <p class="text-orange-600 mb-3 font-semibold">Mobile Developer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Senior mobile developer dengan expertise di React Native dan Flutter. Telah mengembangkan 50+ aplikasi mobile.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 20+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-teal-400 to-teal-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-teal-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Rizki Pratama</h3>
-                        <p class="text-teal-600 mb-3 font-semibold">DevOps Engineer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Expert dalam CI/CD, Docker, Kubernetes, dan cloud infrastructure. Membantu banyak startup scale infrastruktur mereka.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 10+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-pink-400 to-pink-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-pink-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Andi Wijaya</h3>
-                        <p class="text-pink-600 mb-3 font-semibold">Backend Developer</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Spesialis dalam microservices architecture, RESTful API, dan database optimization. Expert dalam Go, Java, dan PostgreSQL.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 14+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 7 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-indigo-400 to-indigo-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-indigo-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Maya Sari</h3>
-                        <p class="text-indigo-600 mb-3 font-semibold">Product Manager</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Product strategist dengan pengalaman membangun produk digital dari 0 hingga 1M+ users. Expert dalam Agile dan Lean methodologies.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-medium text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 16+ Workshop
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pemateri 8 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2 fade-in">
-                    <div class="bg-gradient-to-br from-red-400 to-red-600 h-64 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-red-600 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Fajar Nugroho</h3>
-                        <p class="text-red-600 mb-3 font-semibold">Cybersecurity Expert</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Ethical hacker dan security consultant dengan sertifikasi CISSP dan CEH. Membantu banyak perusahaan meningkatkan security mereka.
-                        </p>
-                        <div class="flex justify-center space-x-3 mb-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                        </div>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i> 8+ Workshop
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="pemateri-grid">
+          <!-- Pemateri akan di-render dari data.js -->
+          <div class="col-span-full text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <p class="mt-4 text-gray-600">Memuat data pemateri...</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ingin Menjadi Pemateri?</h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Bergabunglah dengan tim pemateri kami dan bagikan pengetahuan Anda kepada komunitas
-            </p>
-            <a href="index.html#kontak" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
-                Hubungi Kami
-            </a>
-        </div>
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ingin Menjadi Pemateri?</h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Bergabunglah dengan tim pemateri kami dan bagikan pengetahuan Anda kepada komunitas</p>
+        <a href="index.html#kontak" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105"> Hubungi Kami </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto">
-                        <span class="text-xl font-bold">Sahabat Belajar</span>
-                    </div>
-                    <p class="text-gray-400">
-                        Komunitas pembelajaran terdepan di Indonesia untuk masa depan yang lebih baik.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Tautan Cepat</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html#hero" class="hover:text-white transition-colors">Beranda</a></li>
-                        <li><a href="index.html#event" class="hover:text-white transition-colors">Event</a></li>
-                        <li><a href="index.html#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
-                        <li><a href="pemateri.html" class="hover:text-white transition-colors">Pemateri</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Program</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Workshop</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Hackathon</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Networking</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Mentoring</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Media Sosial</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://wa.me/6281234567890" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://tiktok.com/@sahabatbelajar" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto" style="filter: brightness(0) invert(1)" />
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 Sahabat Belajar. All rights reserved.</p>
+            <p class="text-gray-400">Komunitas pembelajaran terdepan di Indonesia untuk masa depan yang lebih baik.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Tautan Cepat</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#hero" class="hover:text-white transition-colors">Beranda</a></li>
+              <li><a href="#event" class="hover:text-white transition-colors">Event</a></li>
+              <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="#pemateri" class="hover:text-white transition-colors">Pemateri</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Media Sosial</h4>
+            <div class="flex space-x-4">
+              <a href="https://wa.me/6285732957608" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </a>
+              <a href="https://www.instagram.com/sahabatbelajar.official/" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="https://www.tiktok.com/@sahabatbelajar.official" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
             </div>
+          </div>
         </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <p>&copy; 2026 Sahabat Belajar. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition-all opacity-0 invisible transform translate-y-4">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="data-loader.js"></script>
+    <script src="render-functions.js"></script>
     <script>
-        // Scroll Animation untuk halaman pemateri
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      // Initialize DataLoader
+      const dataLoader = new DataLoader();
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-                backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
-                backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                }
-            });
+      // Load and render pemateri
+      async function loadPemateri() {
+        try {
+          await dataLoader.loadData();
+          const pemateri = dataLoader.getPemateri();
+          renderPemateriGrid(pemateri, "pemateri-grid");
+        } catch (error) {
+          console.error("Error loading pemateri:", error);
+          document.getElementById("pemateri-grid").innerHTML = '<p class="text-center text-gray-600 col-span-full">Gagal memuat data pemateri. Silakan refresh halaman.</p>';
         }
+      }
+
+      // Load pemateri on page load
+      loadPemateri();
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.remove("opacity-0", "invisible", "translate-y-4");
+          backToTopBtn.classList.add("opacity-100", "visible", "translate-y-0");
+        } else {
+          backToTopBtn.classList.add("opacity-0", "invisible", "translate-y-4");
+          backToTopBtn.classList.remove("opacity-100", "visible", "translate-y-0");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const icon = mobileMenuBtn.querySelector("i");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          } else {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>

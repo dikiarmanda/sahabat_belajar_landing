@@ -319,11 +319,18 @@
         try {
           const dataLoader = new DataLoader();
           await dataLoader.loadData();
-          const events = dataLoader.getEvents("all").slice(0, 5); // Ambil 5 event terbaru
+          const bulanId = { Januari:0, Februari:1, Maret:2, April:3, Mei:4, Juni:5, Juli:6, Agustus:7, September:8, Oktober:9, November:10, Desember:11 };
+          const parseTanggal = (t) => {
+            const [d, bulan, y] = (t || "").split(" ");
+            const m = bulanId[bulan] ?? 0;
+            return new Date(parseInt(y, 10), m, parseInt(d, 10) || 1);
+          };
+          const events = dataLoader.getEvents("all")
+            .sort((a, b) => parseTanggal(b.tanggal) - parseTanggal(a.tanggal))
+            .slice(0, 10);
 
           const carouselTrack = document.getElementById("event-carousel-track");
           if (carouselTrack && events.length > 0) {
-            console.log("Rendering", events.length, "events");
             // Reset transform sebelum render
             carouselTrack.style.transform = "translateX(0%)";
             carouselTrack.style.display = "flex";
@@ -399,43 +406,32 @@
               })
               .join("");
 
+            // Clone slide pertama di ujung untuk infinite scroll
+            if (carouselTrack.firstElementChild) {
+              carouselTrack.appendChild(carouselTrack.firstElementChild.cloneNode(true));
+            }
+
             // Pastikan carousel track visible dan reset position dengan !important
             carouselTrack.style.cssText = `
-                        display: flex !important;
-                        transform: translateX(0%) !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        position: relative !important;
-                        width: 100% !important;
-                    `;
+              display: flex !important;
+              transform: translateX(0%) !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+              position: relative !important;
+              width: 100% !important;
+            `;
 
             // Pastikan setiap card visible
             setTimeout(() => {
               const cards = carouselTrack.querySelectorAll("div");
               cards.forEach((card, index) => {
                 card.style.cssText += `
-                                display: block !important;
-                                visibility: visible !important;
-                                opacity: 1 !important;
-                            `;
-                console.log(`Card ${index}:`, {
-                  element: card,
-                  display: window.getComputedStyle(card).display,
-                  width: card.offsetWidth,
-                  height: card.offsetHeight,
-                });
+                  display: block !important;
+                  visibility: visible !important;
+                  opacity: 1 !important;
+                `;
               });
             }, 50);
-
-            console.log("Carousel track rendered:", {
-              eventsCount: events.length,
-              trackElement: carouselTrack,
-              trackDisplay: window.getComputedStyle(carouselTrack).display,
-              trackTransform: window.getComputedStyle(carouselTrack).transform,
-              trackWidth: carouselTrack.offsetWidth,
-              trackHeight: carouselTrack.offsetHeight,
-              parentWidth: carouselTrack.parentElement?.offsetWidth,
-            });
 
             // Generate carousel indicators dinamis
             const indicatorsContainer = document.getElementById("carousel-indicators-container");
@@ -496,6 +492,7 @@
         }
 
         const totalSlides = carouselIndicators.length;
+        const totalTrackSlides = eventCarousel.children.length; // termasuk clone untuk infinite
 
         // Clear interval sebelumnya jika ada
         if (window.carouselInterval) {
@@ -511,35 +508,63 @@
           return 1; // sm
         }
 
-        function updateCarousel() {
-          if (eventCarousel) {
-            const slidesPerView = getSlidesPerView();
-            const slideWidth = 100 / slidesPerView;
-            const slideIndex = window.currentSlide || 0;
-            const translateX = -(slideIndex * slideWidth);
+        function updateCarousel(instant) {
+          if (!eventCarousel) return;
+          const slidesPerView = getSlidesPerView();
+          const slideWidth = 100 / slidesPerView;
+          const slideIndex = window.currentSlide || 0;
+          const translateX = -(slideIndex * slideWidth);
 
-            console.log("Updating carousel:", {
-              slideIndex,
-              slidesPerView,
-              slideWidth,
-              translateX,
+          if (instant) eventCarousel.style.transition = "none";
+          eventCarousel.style.transform = `translateX(${translateX}%)`;
+          eventCarousel.style.display = "flex";
+          eventCarousel.style.visibility = "visible";
+          if (instant) {
+            eventCarousel.offsetHeight;
+            eventCarousel.style.transition = "";
+          }
+
+          const indicatorIndex = slideIndex >= totalSlides ? 0 : slideIndex;
+          const indicators = document.querySelectorAll(".carousel-indicator");
+          indicators.forEach((indicator, index) => {
+            if (index === indicatorIndex) {
+              indicator.classList.remove("bg-gray-300", "w-2");
+              indicator.classList.add("bg-blue-600", "w-8");
+            } else {
+              indicator.classList.remove("bg-blue-600", "w-8");
+              indicator.classList.add("bg-gray-300", "w-2");
+            }
+          });
+        }
+
+        function goNext() {
+          if (window.currentSlide === totalSlides - 1) {
+            window.currentSlide = totalTrackSlides - 1;
+            updateCarousel(false);
+          } else {
+            window.currentSlide = Math.min(window.currentSlide + 1, totalTrackSlides - 1);
+            updateCarousel(false);
+          }
+        }
+
+        function goPrev() {
+          if (window.currentSlide === 0) {
+            window.currentSlide = totalTrackSlides - 1;
+            updateCarousel(true);
+            requestAnimationFrame(() => {
+              window.currentSlide = totalSlides - 1;
+              updateCarousel(false);
             });
+          } else {
+            window.currentSlide = window.currentSlide - 1;
+            updateCarousel(false);
+          }
+        }
 
-            eventCarousel.style.transform = `translateX(${translateX}%)`;
-            eventCarousel.style.display = "flex";
-            eventCarousel.style.visibility = "visible";
-
-            // Update indicators
-            const indicators = document.querySelectorAll(".carousel-indicator");
-            indicators.forEach((indicator, index) => {
-              if (index === slideIndex) {
-                indicator.classList.remove("bg-gray-300", "w-2");
-                indicator.classList.add("bg-blue-600", "w-8");
-              } else {
-                indicator.classList.remove("bg-blue-600", "w-8");
-                indicator.classList.add("bg-gray-300", "w-2");
-              }
-            });
+        function onCarouselTransitionEnd() {
+          if (window.currentSlide === totalTrackSlides - 1 && totalTrackSlides > totalSlides) {
+            window.currentSlide = 0;
+            updateCarousel(true);
           }
         }
 
@@ -556,16 +581,11 @@
         const nextBtn = document.getElementById("event-next");
 
         if (prevBtn && nextBtn) {
-          prevBtn.addEventListener("click", () => {
-            window.currentSlide = (window.currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-          });
-
-          nextBtn.addEventListener("click", () => {
-            window.currentSlide = (window.currentSlide + 1) % totalSlides;
-            updateCarousel();
-          });
+          prevBtn.addEventListener("click", goPrev);
+          nextBtn.addEventListener("click", goNext);
         }
+
+        eventCarousel.addEventListener("transitionend", onCarouselTransitionEnd);
 
         // Add event listeners untuk indicators
         const indicators = document.querySelectorAll(".carousel-indicator");
@@ -576,15 +596,12 @@
           });
         });
 
-        // Auto-play carousel
+        // Auto-play carousel (infinite)
         function startCarousel() {
           if (window.carouselInterval) {
             clearInterval(window.carouselInterval);
           }
-          window.carouselInterval = setInterval(() => {
-            window.currentSlide = (window.currentSlide + 1) % totalSlides;
-            updateCarousel();
-          }, 5000);
+          window.carouselInterval = setInterval(goNext, 5000);
         }
 
         if (eventCarousel) {
@@ -607,16 +624,6 @@
         window.currentSlide = 0; // Reset ke slide pertama
         updateCarousel();
         carouselInitialized = true;
-
-        console.log("Carousel initialized:", {
-          totalSlides,
-          currentSlide: window.currentSlide,
-          carouselElement: eventCarousel,
-          carouselDisplay: eventCarousel ? window.getComputedStyle(eventCarousel).display : "N/A",
-          carouselTransform: eventCarousel ? window.getComputedStyle(eventCarousel).transform : "N/A",
-          carouselWidth: eventCarousel ? eventCarousel.offsetWidth : "N/A",
-          carouselChildren: eventCarousel ? eventCarousel.children.length : "N/A",
-        });
       }
 
       // Load carousel events and pemateri on page load

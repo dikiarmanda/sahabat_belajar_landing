@@ -33,7 +33,7 @@ function renderEventCard(event) {
     const pemateriHtml = event.pemateri.length > 0 
         ? `<div class="flex items-center mb-4">
             <i class="fas fa-user ${iconColor} mr-2"></i>
-            <span class="text-gray-600 text-sm">${event.pemateri.join(', ')}</span>
+            <span class="text-gray-600 text-sm">${event.pemateri.join('<br>')}</span>
           </div>`
         : '';
 

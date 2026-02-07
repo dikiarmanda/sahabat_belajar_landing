@@ -162,11 +162,22 @@
       const dataLoader = new DataLoader();
       let currentFilter = "all";
 
+      const bulanId = { Januari:0, Februari:1, Maret:2, April:3, Mei:4, Juni:5, Juli:6, Agustus:7, September:8, Oktober:9, November:10, Desember:11 };
+      function sortEventsByTanggal(events) {
+        return events.slice().sort((a, b) => {
+          const parse = (t) => {
+            const [d, bulan, y] = (t || "").split(" ");
+            return new Date(parseInt(y, 10), bulanId[bulan] ?? 0, parseInt(d, 10) || 1);
+          };
+          return parse(b.tanggal) - parse(a.tanggal);
+        });
+      }
+
       // Load and render events
       async function loadEvents() {
         try {
           await dataLoader.loadData();
-          const events = dataLoader.getEvents("all");
+          const events = sortEventsByTanggal(dataLoader.getEvents("all"));
           renderEventGrid(events, "event-grid");
         } catch (error) {
           console.error("Error loading events:", error);
@@ -192,8 +203,8 @@
           const filter = button.getAttribute("data-filter");
           currentFilter = filter;
 
-          // Get filtered events and render
-          const events = dataLoader.getEvents(filter);
+          // Get filtered events (urut tanggal terbaru) dan render
+          const events = sortEventsByTanggal(dataLoader.getEvents(filter));
           renderEventGrid(events, "event-grid");
         });
       });

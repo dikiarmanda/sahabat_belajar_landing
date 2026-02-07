@@ -241,11 +241,6 @@ a:hover .fab, a:hover .fas {
 }
 
 /* Event Card Gradient Overlay */
-#event .bg-gradient-to-r {
-    position: relative;
-    overflow: hidden;
-}
-
 #event .bg-gradient-to-r::before {
     content: '';
     position: absolute;

@@ -7,9 +7,9 @@
     <meta name="description" content="Daftar lengkap pemateri dan mentor komunitas Sahabat Belajar" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo-brand.png" />
-    <link rel="apple-touch-icon" href="img/logo-brand.png" />
-    <link rel="shortcut icon" href="img/logo-brand.png" />
+    <link rel="icon" type="image/png" href="img/logo-nobg.png" />
+    <link rel="apple-touch-icon" href="img/logo-nobg.png" />
+    <link rel="shortcut icon" href="img/logo-nobg.png" />
 
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +26,7 @@
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <a href="index.html" class="flex items-center space-x-3" id="navbar-brand">
-            <img src="img/logo-brand.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img" />
+            <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img" />
           </a>
 
           <!-- Desktop Menu -->
@@ -56,23 +56,44 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+    <section id="hero" class="min-h-[50vh] flex items-center justify-center pt-24 pb-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white relative">
       <div class="container mx-auto px-4">
-        <div class="text-center fade-in">
+        <div class="text-center fade-in" style="opacity: 1">
           <h1 class="text-4xl md:text-6xl font-bold mb-4">Pemateri Kami</h1>
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">Belajar dari para expert yang berpengalaman di bidangnya masing-masing</p>
         </div>
       </div>
     </section>
 
-    <!-- Pemateri List Section -->
-    <section class="py-20 bg-white">
+    <!-- Section Pemateri Dongeng -->
+    <section id="pemateri-dongeng" class="py-16 bg-gradient-to-b from-white to-blue-50">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="pemateri-grid">
-          <!-- Pemateri akan di-render dari data.js -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Pemateri Dongeng</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Para pendongeng yang siap membawakan cerita seru untuk buah hati</p>
+          <div class="w-20 h-1 bg-gradient-to-r from-orange-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="pemateri-dongeng-grid">
           <div class="col-span-full text-center py-12">
-            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p class="mt-4 text-gray-600">Memuat data pemateri...</p>
+            <div class="inline-block animate-spin rounded-full h-10 w-10 border-2 border-orange-500 border-t-transparent"></div>
+            <p class="mt-3 text-gray-600 text-sm">Memuat pemateri dongeng...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Pemateri Dai -->
+    <section id="pemateri-dai" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Pemateri Dakwah</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Para dai dan ustadz/ustadzah yang mengisi kajian dan tausiyah</p>
+          <div class="w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="pemateri-dai-grid">
+          <div class="col-span-full text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-10 w-10 border-2 border-green-500 border-t-transparent"></div>
+            <p class="mt-3 text-gray-600 text-sm">Memuat pemateri dakwah...</p>
           </div>
         </div>
       </div>
@@ -141,24 +162,40 @@
       // Initialize DataLoader
       const dataLoader = new DataLoader();
 
-      // Load and render pemateri
+      // Load dan render pemateri per section
       async function loadPemateri() {
         try {
           await dataLoader.loadData();
-          const pemateri = dataLoader.getPemateri();
-          renderPemateriGrid(pemateri, "pemateri-grid");
+
+          // Pemateri Dongeng (tag Pendongeng atau posisi Pendongeng)
+          const dongeng = dataLoader.getPemateri().filter((p) => p.tag.includes("Pendongeng") || p.posisi === "Pendongeng");
+          if (dongeng.length > 0) {
+            renderPemateriGrid(dongeng, "pemateri-dongeng-grid");
+          } else {
+            document.getElementById("pemateri-dongeng-grid").innerHTML = '<p class="text-center text-gray-500 col-span-full py-8">Belum ada pemateri dongeng.</p>';
+          }
+
+          // Pemateri Dai / Dakwah (tag Dakwah atau posisi Dakwah)
+          const dai = dataLoader.getPemateri().filter((p) => p.tag.includes("Dakwah") || p.posisi === "Dakwah");
+          if (dai.length > 0) {
+            renderPemateriGrid(dai, "pemateri-dai-grid");
+          } else {
+            document.getElementById("pemateri-dai-grid").innerHTML = '<p class="text-center text-gray-500 col-span-full py-8">Belum ada pemateri dakwah.</p>';
+          }
         } catch (error) {
           console.error("Error loading pemateri:", error);
-          document.getElementById("pemateri-grid").innerHTML = '<p class="text-center text-gray-600 col-span-full">Gagal memuat data pemateri. Silakan refresh halaman.</p>';
+          document.getElementById("pemateri-dongeng-grid").innerHTML = '<p class="text-center text-gray-600 col-span-full">Gagal memuat data. Silakan refresh halaman.</p>';
+          document.getElementById("pemateri-dai-grid").innerHTML = '<p class="text-center text-gray-600 col-span-full">Gagal memuat data. Silakan refresh halaman.</p>';
         }
       }
 
       // Load pemateri on page load
       loadPemateri();
 
-      document.querySelectorAll(".fade-in").forEach((el) => {
-        observer.observe(el);
-      });
+      // Scroll animation untuk fade-in (jika ada observer di scope global, optional)
+      if (typeof observer !== "undefined") {
+        document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+      }
 
       // Back to Top Button
       const backToTopBtn = document.getElementById("back-to-top");

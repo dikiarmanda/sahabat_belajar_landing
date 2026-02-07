@@ -1,178 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event - Sahabat Belajar</title>
-    <meta name="description" content="Daftar lengkap event dan workshop komunitas Sahabat Belajar">
-    
+    <meta name="description" content="Daftar lengkap event dan workshop komunitas Sahabat Belajar" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo-nobg.png">
-    <link rel="apple-touch-icon" href="img/logo-nobg.png">
-    <link rel="shortcut icon" href="img/logo-nobg.png">
-    
+    <link rel="icon" type="image/png" href="img/logo-nobg.png" />
+    <link rel="apple-touch-icon" href="img/logo-nobg.png" />
+    <link rel="shortcut icon" href="img/logo-nobg.png" />
+
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Font Awesome untuk icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 loaded">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="bg-gray-50 loaded">
     <!-- Navigation Bar -->
     <nav class="fixed top-0 w-full bg-transparent z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3" id="navbar-brand">
-                    <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img">
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html#hero" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-1">Beranda</a>
-                    <a href="event.html" class="nav-link text-white hover:text-blue-200 transition-colors duration-300 font-semibold" id="nav-link-2">Event</a>
-                    <a href="index.html#tentang" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-3">Tentang Kami</a>
-                    <a href="pemateri.html" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-4">Pemateri</a>
-                    <a href="index.html#kontak" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-5">Kontak</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden focus:outline-none transition-colors duration-300" id="mobile-menu-btn">
-                    <i class="fas fa-bars text-white text-2xl" id="mobile-menu-icon"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
-                <a href="index.html#hero" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-1">Beranda</a>
-                <a href="event.html" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300 font-semibold" id="mobile-nav-link-2">Event</a>
-                <a href="index.html#tentang" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-3">Tentang Kami</a>
-                <a href="pemateri.html" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-4">Pemateri</a>
-                <a href="index.html#kontak" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-5">Kontak</a>
-            </div>
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="flex items-center space-x-3" id="navbar-brand">
+            <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto transition-opacity duration-300" id="navbar-logo-img" />
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6">
+            <a href="index.html#hero" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-1">Beranda</a>
+            <a href="event.html" class="nav-link text-white hover:text-blue-200 transition-colors duration-300 font-semibold" id="nav-link-2">Event</a>
+            <a href="index.html#tentang" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-3">Tentang Kami</a>
+            <a href="pemateri.html" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-4">Pemateri</a>
+            <a href="index.html#kontak" class="nav-link text-white hover:text-blue-200 transition-colors duration-300" id="nav-link-5">Kontak</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden focus:outline-none transition-colors duration-300" id="mobile-menu-btn">
+            <i class="fas fa-bars text-white text-2xl" id="mobile-menu-icon"></i>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+          <a href="index.html#hero" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-1">Beranda</a>
+          <a href="event.html" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300 font-semibold" id="mobile-nav-link-2">Event</a>
+          <a href="index.html#tentang" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-3">Tentang Kami</a>
+          <a href="pemateri.html" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-4">Pemateri</a>
+          <a href="index.html#kontak" class="block py-2 nav-link text-white hover:text-blue-200 transition-colors duration-300" id="mobile-nav-link-5">Kontak</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-10"></div>
-        <div class="container mx-auto px-4 py-20 relative z-10">
-            <div class="text-center fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                    Event & Workshop
-                </h1>
-                <p class="text-xl md:text-2xl mb-4 text-blue-100">
-                    Dapatkan informasi tentang event-event menarik yang akan kami adakan
-                </p>
-                <p class="text-lg md:text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
-                    Bergabunglah dengan event dan workshop berkualitas untuk meningkatkan skill dan memperluas jaringan profesional Anda.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#event-list" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
-                        Lihat Semua Event
-                    </a>
-                    <a href="index.html#kontak" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105">
-                        Hubungi Kami
-                    </a>
-                </div>
-            </div>
+      <div class="absolute inset-0 bg-black opacity-10"></div>
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="text-center fade-in">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">Event & Workshop</h1>
+          <p class="text-xl md:text-2xl mb-4 text-blue-100">Dapatkan informasi tentang event-event menarik yang akan kami adakan</p>
+          <p class="text-lg md:text-xl mb-8 text-blue-50 max-w-2xl mx-auto">Bergabunglah dengan event dan workshop berkualitas untuk meningkatkan skill dan memperluas jaringan profesional Anda.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#event-list" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"> Lihat Semua Event </a>
+            <a href="index.html#kontak" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105"> Hubungi Kami </a>
+          </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-2xl text-white opacity-75"></i>
-        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-2xl text-white opacity-75"></i>
+      </div>
     </section>
 
     <!-- Event List Section -->
     <section id="event-list" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
-                <button class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold transition-all" data-filter="all">
-                    Semua Event
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="dongeng">
-                    Dongeng
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="dakwah">
-                    Dakwah
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="talkshow">
-                    Talkshow
-                </button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" id="event-grid">
-                <!-- Events akan di-render dari data.js -->
-                <div class="col-span-full text-center py-12">
-                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-                    <p class="mt-4 text-gray-600">Memuat data event...</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+          <button class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold transition-all" data-filter="all">Semua Event</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="dongeng">Dongeng</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="dakwah">Dakwah</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all" data-filter="talkshow">Talkshow</button>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" id="event-grid">
+          <!-- Events akan di-render dari data.js -->
+          <div class="col-span-full text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <p class="mt-4 text-gray-600">Memuat data event...</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tertarik dengan Event Kami?</h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Ikuti Instagram kami untuk mendapatkan update event terbaru dan informasi pendaftaran
-            </p>
-            <a href="https://instagram.com/sahabatbelajar" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
-                <i class="fab fa-instagram mr-2"></i>
-                Follow Instagram Kami
-            </a>
-        </div>
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Tertarik dengan Event Kami?</h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Ikuti Instagram kami untuk mendapatkan update event terbaru dan informasi pendaftaran</p>
+        <a href="https://instagram.com/sahabatbelajar" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
+          <i class="fab fa-instagram mr-2"></i>
+          Follow Instagram Kami
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto" style="filter: brightness(0) invert(1);">
-                    </div>
-                    <p class="text-gray-400">
-                        Komunitas pembelajaran terdepan di Indonesia untuk masa depan yang lebih baik.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Tautan Cepat</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html#hero" class="hover:text-white transition-colors">Beranda</a></li>
-                        <li><a href="event.html" class="hover:text-white transition-colors">Event</a></li>
-                        <li><a href="index.html#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
-                        <li><a href="pemateri.html" class="hover:text-white transition-colors">Pemateri</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Media Sosial</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://wa.me/6285732957608" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sahabatbelajar.official/" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@sahabatbelajar.official" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <img src="img/logo-brand-nobg.png" alt="Sahabat Belajar Logo" class="h-10 w-auto" style="filter: brightness(0) invert(1)" />
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 Sahabat Belajar. All rights reserved.</p>
+            <p class="text-gray-400">Komunitas pembelajaran terdepan di Indonesia untuk masa depan yang lebih baik.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Tautan Cepat</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="index.html#hero" class="hover:text-white transition-colors">Beranda</a></li>
+              <li><a href="event.html" class="hover:text-white transition-colors">Event</a></li>
+              <li><a href="index.html#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="pemateri.html" class="hover:text-white transition-colors">Pemateri</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Media Sosial</h4>
+            <div class="flex space-x-4">
+              <a href="https://wa.me/6285732957608" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </a>
+              <a href="https://www.instagram.com/sahabatbelajar.official/" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="https://www.tiktok.com/@sahabatbelajar.official" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
             </div>
+          </div>
         </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <p>&copy; 2026 Sahabat Belajar. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition-all opacity-0 invisible transform translate-y-4">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- JavaScript -->
@@ -180,193 +158,192 @@
     <script src="data-loader.js"></script>
     <script src="render-functions.js"></script>
     <script>
-        // Initialize DataLoader
-        const dataLoader = new DataLoader();
-        let currentFilter = 'all';
+      // Initialize DataLoader
+      const dataLoader = new DataLoader();
+      let currentFilter = "all";
 
-        // Load and render events
-        async function loadEvents() {
-            try {
-                await dataLoader.loadData();
-                const events = dataLoader.getEvents('all');
-                renderEventGrid(events, 'event-grid');
-            } catch (error) {
-                console.error('Error loading events:', error);
-                document.getElementById('event-grid').innerHTML = 
-                    '<p class="text-center text-gray-600 col-span-full">Gagal memuat data event. Silakan refresh halaman.</p>';
-            }
+      // Load and render events
+      async function loadEvents() {
+        try {
+          await dataLoader.loadData();
+          const events = dataLoader.getEvents("all");
+          renderEventGrid(events, "event-grid");
+        } catch (error) {
+          console.error("Error loading events:", error);
+          document.getElementById("event-grid").innerHTML = '<p class="text-center text-gray-600 col-span-full">Gagal memuat data event. Silakan refresh halaman.</p>';
         }
+      }
 
-        // Filter Functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
+      // Filter Functionality
+      const filterButtons = document.querySelectorAll(".filter-btn");
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
-                    btn.classList.add('bg-gray-200', 'text-gray-700');
-                });
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterButtons.forEach((btn) => {
+            btn.classList.remove("active", "bg-blue-600", "text-white");
+            btn.classList.add("bg-gray-200", "text-gray-700");
+          });
 
-                // Add active class to clicked button
-                button.classList.add('active', 'bg-blue-600', 'text-white');
-                button.classList.remove('bg-gray-200', 'text-gray-700');
+          // Add active class to clicked button
+          button.classList.add("active", "bg-blue-600", "text-white");
+          button.classList.remove("bg-gray-200", "text-gray-700");
 
-                const filter = button.getAttribute('data-filter');
-                currentFilter = filter;
+          const filter = button.getAttribute("data-filter");
+          currentFilter = filter;
 
-                // Get filtered events and render
-                const events = dataLoader.getEvents(filter);
-                renderEventGrid(events, 'event-grid');
-            });
+          // Get filtered events and render
+          const events = dataLoader.getEvents(filter);
+          renderEventGrid(events, "event-grid");
         });
+      });
 
-        // Load events on page load
-        loadEvents();
+      // Load events on page load
+      loadEvents();
 
-        // Scroll Animation (Fade In) - untuk elemen dengan class fade-in
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      // Scroll Animation (Fade In) - untuk elemen dengan class fade-in
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe semua elemen dengan class fade-in (kecuali yang di hero)
-        document.querySelectorAll('.fade-in').forEach(el => {
-            // Skip hero section karena akan langsung di-trigger
-            if (!el.closest('#hero')) {
-                observer.observe(el);
-            }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+            observer.unobserve(entry.target);
+          }
         });
+      }, observerOptions);
 
-        // Trigger animasi hero section langsung (karena hero selalu terlihat)
-        // Hero section tidak perlu IntersectionObserver karena selalu visible saat halaman dimuat
-        // Gunakan setTimeout untuk memastikan CSS sudah ter-load
-        setTimeout(() => {
-            const heroFadeIn = document.querySelector('#hero .fade-in');
-            if (heroFadeIn) {
-                heroFadeIn.classList.add('fade-in-visible');
-            }
-        }, 50);
-
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-                backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
-                backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                }
-            });
+      // Observe semua elemen dengan class fade-in (kecuali yang di hero)
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        // Skip hero section karena akan langsung di-trigger
+        if (!el.closest("#hero")) {
+          observer.observe(el);
         }
+      });
 
-        // Navbar Background and Text Color on Scroll
-        const navbar = document.getElementById('navbar');
-        const navbarLogoImg = document.getElementById('navbar-logo-img');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-        const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
-        const heroSection = document.getElementById('hero');
-
-        function updateNavbarStyle() {
-            const currentScroll = window.pageYOffset;
-            const heroHeight = heroSection ? heroSection.offsetHeight : 600;
-            
-            if (currentScroll > heroHeight - 100) {
-                // Scrolled past hero section - white background with dark text
-                navbar.classList.add('bg-white', 'shadow-lg');
-                navbar.classList.remove('bg-transparent');
-                
-                // Change logo image
-                if (navbarLogoImg) {
-                    navbarLogoImg.src = 'img/logo-brand-nobg.png';
-                    navbarLogoImg.style.filter = 'none';
-                }
-                
-                // Change nav links color (desktop)
-                navLinks.forEach(link => {
-                    link.classList.remove('text-white', 'hover:text-blue-200');
-                    link.classList.add('text-gray-700', 'hover:text-blue-600');
-                });
-                
-                // Change mobile menu icon color
-                if (mobileMenuIcon) {
-                    mobileMenuIcon.classList.remove('text-white');
-                    mobileMenuIcon.classList.add('text-gray-700');
-                }
-                
-                // Change mobile menu links color
-                mobileNavLinks.forEach(link => {
-                    link.classList.remove('text-white', 'hover:text-blue-200');
-                    link.classList.add('text-gray-700', 'hover:text-blue-600');
-                });
-            } else {
-                // In hero section - transparent background with white text
-                navbar.classList.remove('bg-white', 'shadow-lg');
-                navbar.classList.add('bg-transparent');
-                
-                // Change logo image
-                if (navbarLogoImg) {
-                    navbarLogoImg.src = 'img/logo-brand-nobg.png';
-                    navbarLogoImg.style.filter = 'brightness(0) invert(1)'; // Make logo white
-                }
-                
-                // Change nav links color (desktop)
-                navLinks.forEach(link => {
-                    link.classList.remove('text-gray-700', 'hover:text-blue-600');
-                    link.classList.add('text-white', 'hover:text-blue-200');
-                });
-                
-                // Change mobile menu icon color
-                if (mobileMenuIcon) {
-                    mobileMenuIcon.classList.remove('text-gray-700');
-                    mobileMenuIcon.classList.add('text-white');
-                }
-                
-                // Change mobile menu links color
-                mobileNavLinks.forEach(link => {
-                    link.classList.remove('text-gray-700', 'hover:text-blue-600');
-                    link.classList.add('text-white', 'hover:text-blue-200');
-                });
-            }
+      // Trigger animasi hero section langsung (karena hero selalu terlihat)
+      // Hero section tidak perlu IntersectionObserver karena selalu visible saat halaman dimuat
+      // Gunakan setTimeout untuk memastikan CSS sudah ter-load
+      setTimeout(() => {
+        const heroFadeIn = document.querySelector("#hero .fade-in");
+        if (heroFadeIn) {
+          heroFadeIn.classList.add("fade-in-visible");
         }
+      }, 50);
 
-        // Initialize navbar style
-        updateNavbarStyle();
-        window.addEventListener('scroll', updateNavbarStyle);
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.remove("opacity-0", "invisible", "translate-y-4");
+          backToTopBtn.classList.add("opacity-100", "visible", "translate-y-0");
+        } else {
+          backToTopBtn.classList.add("opacity-0", "invisible", "translate-y-4");
+          backToTopBtn.classList.remove("opacity-100", "visible", "translate-y-0");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const icon = mobileMenuBtn.querySelector("i");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          } else {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          }
+        });
+      }
+
+      // Navbar Background and Text Color on Scroll
+      const navbar = document.getElementById("navbar");
+      const navbarLogoImg = document.getElementById("navbar-logo-img");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+      const mobileNavLinks = document.querySelectorAll("#mobile-menu .nav-link");
+      const heroSection = document.getElementById("hero");
+
+      function updateNavbarStyle() {
+        const currentScroll = window.pageYOffset;
+        const heroHeight = heroSection ? heroSection.offsetHeight : 600;
+
+        if (currentScroll > heroHeight - 100) {
+          // Scrolled past hero section - white background with dark text
+          navbar.classList.add("bg-white", "shadow-lg");
+          navbar.classList.remove("bg-transparent");
+
+          // Change logo image
+          if (navbarLogoImg) {
+            navbarLogoImg.src = "img/logo-brand-nobg.png";
+            navbarLogoImg.style.filter = "none";
+          }
+
+          // Change nav links color (desktop)
+          navLinks.forEach((link) => {
+            link.classList.remove("text-white", "hover:text-blue-200");
+            link.classList.add("text-gray-700", "hover:text-blue-600");
+          });
+
+          // Change mobile menu icon color
+          if (mobileMenuIcon) {
+            mobileMenuIcon.classList.remove("text-white");
+            mobileMenuIcon.classList.add("text-gray-700");
+          }
+
+          // Change mobile menu links color
+          mobileNavLinks.forEach((link) => {
+            link.classList.remove("text-white", "hover:text-blue-200");
+            link.classList.add("text-gray-700", "hover:text-blue-600");
+          });
+        } else {
+          // In hero section - transparent background with white text
+          navbar.classList.remove("bg-white", "shadow-lg");
+          navbar.classList.add("bg-transparent");
+
+          // Change logo image
+          if (navbarLogoImg) {
+            navbarLogoImg.src = "img/logo-brand-nobg.png";
+            navbarLogoImg.style.filter = "brightness(0) invert(1)"; // Make logo white
+          }
+
+          // Change nav links color (desktop)
+          navLinks.forEach((link) => {
+            link.classList.remove("text-gray-700", "hover:text-blue-600");
+            link.classList.add("text-white", "hover:text-blue-200");
+          });
+
+          // Change mobile menu icon color
+          if (mobileMenuIcon) {
+            mobileMenuIcon.classList.remove("text-gray-700");
+            mobileMenuIcon.classList.add("text-white");
+          }
+
+          // Change mobile menu links color
+          mobileNavLinks.forEach((link) => {
+            link.classList.remove("text-gray-700", "hover:text-blue-600");
+            link.classList.add("text-white", "hover:text-blue-200");
+          });
+        }
+      }
+
+      // Initialize navbar style
+      updateNavbarStyle();
+      window.addEventListener("scroll", updateNavbarStyle);
     </script>
-</body>
+  </body>
 </html>

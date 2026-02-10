@@ -139,7 +139,7 @@ const appData = {
     {
       id: 1,
       nama: "Talkshow Online Strategi Jitu Tembus Beasiswa LPDP",
-      gambar: "img\\event\\talkshow-2024-1.jpg",
+      gambar: "img\\event\\talkshow-2024-12-14.jpg",
       linkIg: "https://www.instagram.com/p/DDPgHxsyPSK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "Online via Google Meet",
       tanggal: "14 Desember 2024",
@@ -152,7 +152,7 @@ const appData = {
     {
       id: 2,
       nama: "Talkshow Online Ventriloquist Boneka Menarik Minat Anak dengan Bercerita",
-      gambar: "img\\event\\talkshow-2025-1.jpg",
+      gambar: "img\\event\\talkshow-2025-01-26.jpg",
       linkIg: "https://www.instagram.com/p/DFDLlM_yvx_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "Online via Google Meet",
       tanggal: "26 Januari 2025",
@@ -165,7 +165,7 @@ const appData = {
     {
       id: 3,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-15-2.jpg",
+      gambar: "img\\event\\litkel-2026-01-15-2.jpg",
       linkIg: "https://www.instagram.com/p/DTcM_HvEpkr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "SMK Al-Ishlah Surabaya",
       tanggal: "15 Januari 2026",
@@ -178,7 +178,7 @@ const appData = {
     {
       id: 4,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-15.jpg",
+      gambar: "img\\event\\litkel-2026-01-15.jpg",
       linkIg: "https://www.instagram.com/p/DTe3MQXEnFv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "PG/TK Subulus Salam",
       tanggal: "15 Januari 2026",
@@ -191,7 +191,7 @@ const appData = {
     {
       id: 5,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-17.jpg",
+      gambar: "img\\event\\litkel-2026-01-17.jpg",
       linkIg: "https://www.instagram.com/p/DTcNhnkkpUG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "SDN Junwangi Krian",
       tanggal: "17 Januari 2026",
@@ -204,7 +204,7 @@ const appData = {
     {
       id: 6,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-17-2.jpg",
+      gambar: "img\\event\\litkel-2026-01-17-2.jpg",
       linkIg: "https://www.instagram.com/p/DTe3eWpkgxJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "SDN Waung",
       tanggal: "17 Januari 2026",
@@ -217,7 +217,7 @@ const appData = {
     {
       id: 7,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-19-2.jpg",
+      gambar: "img\\event\\litkel-2026-01-19-2.jpg",
       linkIg: "https://www.instagram.com/p/DTe2npSkg99/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "Yayasan Maryam Surabaya",
       tanggal: "19 Januari 2026",
@@ -230,7 +230,7 @@ const appData = {
     {
       id: 8,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-19.jpg",
+      gambar: "img\\event\\litkel-2026-01-19.jpg",
       linkIg: "https://www.instagram.com/p/DTe3ritEtpI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "TK Kartini",
       tanggal: "19 Januari 2026",
@@ -243,7 +243,7 @@ const appData = {
     {
       id: 9,
       nama: "Literasi Keliling Goes to School",
-      gambar: "img\\event\\litkel-2026-20.jpg",
+      gambar: "img\\event\\litkel-2026-01-20.jpg",
       linkIg: "https://www.instagram.com/p/DTe4VOLkuz9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "SDN Pakis 3 Surabaya",
       tanggal: "20 Januari 2026",
@@ -256,7 +256,7 @@ const appData = {
     {
       id: 10,
       nama: "Talkshow Online Berdakwah dengan Cerita",
-      gambar: "img\\event\\talkshow-2026-1.jpg",
+      gambar: "img\\event\\talkshow-2026-02-01.jpg",
       linkIg: "https://www.instagram.com/p/DUCDwO9kqDI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       lokasi: "Online via Google Meet",
       tanggal: "1 Februari 2026",
@@ -265,6 +265,19 @@ const appData = {
       tag: ["talkshow", "pendongeng"],
       kategori: "talkshow",
       deskripsi: "Yuk, cari tahu berbagai trik seru dan kreatif untuk memikat perhatian anak bersama para pendongeng inspiratif! Raih wawasan segar dan pengalaman berharga yang bisa menunjang pendidikan dan perkembangan sang buah hati. Jangan lewatkan momen spesial ini—siapkan diri untuk inspirasi dan pengalaman berbeda yang sayang untuk dilewatkan!",
+    },
+    {
+      id: 11,
+      nama: "Literasi Keliling Goes to School",
+      gambar: "img\\event\\litkel-2026-02-11.jpg",
+      linkIg: "https://www.instagram.com/p/DUkJdJektim/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      lokasi: "TK ABA Pangkemiri",
+      tanggal: "11 Februari 2026",
+      waktu: "08:30 - 09:30 WIB",
+      pemateri: ["Kak Nadya Pendongeng Ceria"],
+      tag: ["pendongeng", "literasi"],
+      kategori: "pendongeng",
+      deskripsi: "Ayo ramaikan Dongeng Anak Ceria bersama Kak Nadya Pendongeng Ceria! Dapatkan pengalaman seru dan inspiratif dengan dongeng yang membangkitkan semangat literasi di sekolah. Jangan lewatkan momen kebersamaan penuh wawasan, tawa, dan motivasi untuk menumbuhkan budaya membaca serta karakter positif. Ajak teman-temanmu untuk belajar, berbagi, dan beraksi bersama dalam kegiatan penuh makna ini!",
     },
   ],
 };
